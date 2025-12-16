@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}{{ project.title }} - Portfolio{% endblock %}
+
+{% block content %}
+<!-- Project Header -->
+<section class="project-header">
+    <div class="container">
+        <div class="project-header-content">
+            <div class="project-meta">
+                <span class="project-category">{{ project.category|title }}</span>
+                <span class="project-date">Completed 2024</span>
+            </div>
+            <h1 class="project-title">{{ project.title }}</h1>
+            <p class="project-subtitle">{{ project.description }}</p>
+        </div>
+    </div>
+</section>
+
+<!-- Project Details -->
+<section class="project-details">
+    <div class="container">
+        <div class="project-layout">
+            <div class="project-main">
+                <div class="project-image-large">
+                    <img src="{{ url_for('static', filename='images/' + project.image) }}" alt="{{ project.title }}">
+                </div>
+                
+                <div class="project-features">
+                    <h2>Key Features</h2>
+                    <div class="features-grid">
+                        {% for feature in project.features %}
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>{{ feature }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+                <div class="project-description-full">
+                    <h2>Project Overview</h2>
+                    <p>
+                        This project was developed to address specific business needs using modern technologies 
+                        and best practices. The solution includes a comprehensive set of features designed to 
+                        provide maximum value to end-users while maintaining scalability and performance.
+                    </p>
+                    <p>
+                        The implementation followed agile methodology with regular iterations and client feedback 
+                        sessions to ensure the final product perfectly matched the requirements and expectations.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="project-sidebar">
+                <div class="project-tech-stack">
+                    <h3>Technology Stack</h3>
+                    <div class="tech-stack-list">
+                        {% for tech in project.technologies %}
+                        <div class="tech-item">
+                            <i class="fas fa-code"></i>
+                            <span>{{ tech }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+                <div class="project-links">
+                    <h3>Project Links</h3>
+                    <a href="#" class="btn btn-primary btn-block">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                    <a href="#" class="btn btn-secondary btn-block">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+                
+                <div class="project-info">
+                    <h3>Project Details</h3>
+                    <div class="info-item">
+                        <strong>Category:</strong>
+                        <span>{{ project.category|title }}</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Duration:</strong>
+                        <span>3-6 months</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Team Size:</strong>
+                        <span>3-5 members</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Client:</strong>
+                        <span>Confidential</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Navigation -->
+<div class="project-navigation">
+    <div class="container">
+        <div class="nav-links">
+            <a href="{{ url_for('portfolio') }}" class="nav-link">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+            <a href="{{ url_for('contact') }}" class="nav-link">
+                Start a Similar Project <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

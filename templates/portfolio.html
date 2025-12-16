@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Portfolio - IT Portfolio{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">PORTFOLIO</h1>
+        <p class="page-subtitle">My recent projects and case studies</p>
+    </div>
+</section>
+
+<!-- Portfolio Grid -->
+<section class="portfolio-grid-section">
+    <div class="container">
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="card-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <h3 class="card-category">Frontend</h3>
+                    <h2 class="card-title">E-Commerce Platform</h2>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Modern responsive e-commerce website with product catalog, shopping cart, and checkout functionality.</p>
+                    <div class="card-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                    </div>
+                    <a href="#" class="card-link">View Details</a>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="card-header" style="background: linear-gradient(135deg, #764ba2 0%, #f5576c 100%);">
+                    <h3 class="card-category">Fullstack</h3>
+                    <h2 class="card-title">Task Management App</h2>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Full-stack web application for managing tasks and projects with user authentication and real-time updates.</p>
+                    <div class="card-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">React</span>
+                    </div>
+                    <a href="#" class="card-link">View Details</a>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="card-header" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <h3 class="card-category">Design</h3>
+                    <h2 class="card-title">Mobile App UI Design</h2>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Complete UI/UX design for a fitness tracking mobile application with user flows and prototypes.</p>
+                    <div class="card-tech">
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">UI Design</span>
+                        <span class="tech-tag">Prototyping</span>
+                    </div>
+                    <a href="#" class="card-link">View Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Have a Project in Mind?</h2>
+            <p>Let's collaborate to bring your ideas to life with innovative solutions</p>
+            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-large">
+                <i class="fas fa-paper-plane"></i> Start a Project
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

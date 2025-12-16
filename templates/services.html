@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block title %}Services & Expertise - IT Portfolio{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">SERVICES & EXPERTISE</h1>
+        <p class="page-subtitle">Comprehensive IT solutions tailored to your needs</p>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section">
+    <div class="container">
+        <div class="services-container">
+            {% for service in services %}
+            <div class="service-detail" id="{{ service.title.lower().replace(' ', '-') }}">
+                <div class="service-header">
+                    <div class="service-icon-large">
+                        <i class="fas fa-{{ service.icon }}"></i>
+                    </div>
+                    <h2>{{ service.title }}</h2>
+                </div>
+                <div class="service-content">
+                    <p class="service-description">{{ service.description }}</p>
+                    
+                    <div class="service-features">
+                        <h3>What I Offer:</h3>
+                        <ul>
+                            {% for feature in service.features %}
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span>{{ feature }}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    
+                    {% if service.title == "Web Development" %}
+                    <div class="service-tech">
+                        <h3>Technologies:</h3>
+                        <div class="tech-tags">
+                            <span>HTML5 & CSS3</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Vue.js</span>
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>Flask</span>
+                        </div>
+                    </div>
+                    {% elif service.title == "Technical Consulting" %}
+                    <div class="service-tech">
+                        <h3>Expertise Areas:</h3>
+                        <div class="tech-tags">
+                            <span>Technology Strategy</span>
+                            <span>Architecture Design</span>
+                            <span>Team Management</span>
+                            <span>Project Planning</span>
+                            <span>Code Reviews</span>
+                        </div>
+                    </div>
+                    {% elif service.title == "Cloud Computing" %}
+                    <div class="service-tech">
+                        <h3>Cloud Platforms & Tools:</h3>
+                        <div class="tech-tags">
+                            <span>AWS</span>
+                            <span>Azure</span>
+                            <span>Google Cloud</span>
+                            <span>Docker</span>
+                            <span>Kubernetes</span>
+                            <span>Terraform</span>
+                            <span>CI/CD</span>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section class="process-section">
+    <div class="container">
+        <h2 class="section-title">My Working Process</h2>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Discovery & Planning</h3>
+                <p>Understand requirements and create detailed project plan</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Design & Development</h3>
+                <p>Create solutions using modern technologies and best practices</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Testing & Deployment</h3>
+                <p>Rigorous testing followed by smooth deployment</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Support & Maintenance</h3>
+                <p>Ongoing support and regular updates</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Let's work together to bring your ideas to life with innovative solutions.</p>
+            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-large">Get In Touch</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
