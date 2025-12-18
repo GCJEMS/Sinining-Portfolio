@@ -1,8 +1,30 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Andre Sinining - UI/UX Designer & Full-Stack Developer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
 
-{% block title %}Home - James Andre Sinining{% endblock %}
+<!-- Navbar -->
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">James Andre Sinining</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
-{% block content %}
 <!-- Hero Section -->
 <section class="hero">
     <div class="container">
@@ -14,13 +36,13 @@
                 and scalable web applications. I specialize in UI/UX design, frontend, and backend development.
             </p>
             <div class="hero-cta">
-                <a href="{{ url_for('portfolio') }}" class="btn btn-primary">View My Work</a>
-                <a href="{{ url_for('contact') }}" class="btn btn-secondary">Get In Touch</a>
+                <a href="portfolio.html" class="btn btn-primary">View My Work</a>
+                <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
             </div>
         </div>
         <div class="hero-image">
             <div class="image-placeholder">
-                <img src="static/images/sinining.png" alt="James Andre Sinining" class="hero-img">
+                <img src="images/sinining.png" alt="James Andre Sinining" class="hero-img">
             </div>
         </div>
     </div>
@@ -37,7 +59,7 @@
                 </div>
                 <h3>UI/UX Design</h3>
                 <p>Creating beautiful and intuitive user interfaces with exceptional user experiences.</p>
-                <a href="{{ url_for('portfolio') }}" class="service-link">
+                <a href="portfolio.html" class="service-link">
                     View My Work <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -47,7 +69,7 @@
                 </div>
                 <h3>Frontend Development</h3>
                 <p>Building modern, responsive web applications with clean and efficient code.</p>
-                <a href="{{ url_for('portfolio') }}" class="service-link">
+                <a href="portfolio.html" class="service-link">
                     View My Work <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -57,7 +79,7 @@
                 </div>
                 <h3>Backend Development</h3>
                 <p>Developing scalable and secure server-side solutions with modern technologies.</p>
-                <a href="{{ url_for('portfolio') }}" class="service-link">
+                <a href="portfolio.html" class="service-link">
                     View My Work <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -103,4 +125,6 @@
         </div>
     </div>
 </section>
-{% endblock %}
+
+</body>
+</html>

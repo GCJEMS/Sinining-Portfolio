@@ -1,8 +1,30 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Expertise - James Andre Sinining</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
 
-{% block title %}Services & Expertise - IT Portfolio{% endblock %}
+<!-- Navbar -->
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">James Andre Sinining</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
-{% block content %}
 <!-- Page Header -->
 <section class="page-header">
     <div class="container">
@@ -15,30 +37,28 @@
 <section class="services-section">
     <div class="container">
         <div class="services-container">
-            {% for service in services %}
-            <div class="service-detail" id="{{ service.title.lower().replace(' ', '-') }}">
+            
+            <!-- Web Development Service -->
+            <div class="service-detail" id="web-development">
                 <div class="service-header">
                     <div class="service-icon-large">
-                        <i class="fas fa-{{ service.icon }}"></i>
+                        <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h2>{{ service.title }}</h2>
+                    <h2>Web Development</h2>
                 </div>
                 <div class="service-content">
-                    <p class="service-description">{{ service.description }}</p>
+                    <p class="service-description">Developing scalable and responsive web applications tailored to your business needs.</p>
                     
                     <div class="service-features">
                         <h3>What I Offer:</h3>
                         <ul>
-                            {% for feature in service.features %}
-                            <li>
-                                <i class="fas fa-check"></i>
-                                <span>{{ feature }}</span>
-                            </li>
-                            {% endfor %}
+                            <li><i class="fas fa-check"></i> Custom Frontend Development</li>
+                            <li><i class="fas fa-check"></i> Backend & API Integration</li>
+                            <li><i class="fas fa-check"></i> Database Design & Management</li>
+                            <li><i class="fas fa-check"></i> Responsive & Mobile-Friendly Design</li>
                         </ul>
                     </div>
-                    
-                    {% if service.title == "Web Development" %}
+
                     <div class="service-tech">
                         <h3>Technologies:</h3>
                         <div class="tech-tags">
@@ -51,7 +71,31 @@
                             <span>Flask</span>
                         </div>
                     </div>
-                    {% elif service.title == "Technical Consulting" %}
+                </div>
+            </div>
+
+            <!-- Technical Consulting Service -->
+            <div class="service-detail" id="technical-consulting">
+                <div class="service-header">
+                    <div class="service-icon-large">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h2>Technical Consulting</h2>
+                </div>
+                <div class="service-content">
+                    <p class="service-description">Providing strategic advice to improve technology adoption, team efficiency, and project outcomes.</p>
+
+                    <div class="service-features">
+                        <h3>What I Offer:</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Technology Strategy</li>
+                            <li><i class="fas fa-check"></i> Architecture Design</li>
+                            <li><i class="fas fa-check"></i> Team Management Guidance</li>
+                            <li><i class="fas fa-check"></i> Project Planning & Roadmaps</li>
+                            <li><i class="fas fa-check"></i> Code Reviews & Best Practices</li>
+                        </ul>
+                    </div>
+
                     <div class="service-tech">
                         <h3>Expertise Areas:</h3>
                         <div class="tech-tags">
@@ -62,7 +106,31 @@
                             <span>Code Reviews</span>
                         </div>
                     </div>
-                    {% elif service.title == "Cloud Computing" %}
+                </div>
+            </div>
+
+            <!-- Cloud Computing Service -->
+            <div class="service-detail" id="cloud-computing">
+                <div class="service-header">
+                    <div class="service-icon-large">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h2>Cloud Computing</h2>
+                </div>
+                <div class="service-content">
+                    <p class="service-description">Leveraging cloud platforms to build scalable, reliable, and efficient systems for businesses.</p>
+
+                    <div class="service-features">
+                        <h3>What I Offer:</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Cloud Architecture & Deployment</li>
+                            <li><i class="fas fa-check"></i> Containerization with Docker & Kubernetes</li>
+                            <li><i class="fas fa-check"></i> Infrastructure as Code (Terraform)</li>
+                            <li><i class="fas fa-check"></i> CI/CD Pipelines & Automation</li>
+                            <li><i class="fas fa-check"></i> Multi-Cloud Support (AWS, Azure, GCP)</li>
+                        </ul>
+                    </div>
+
                     <div class="service-tech">
                         <h3>Cloud Platforms & Tools:</h3>
                         <div class="tech-tags">
@@ -75,10 +143,9 @@
                             <span>CI/CD</span>
                         </div>
                     </div>
-                    {% endif %}
                 </div>
             </div>
-            {% endfor %}
+
         </div>
     </div>
 </section>
@@ -112,14 +179,4 @@
     </div>
 </section>
 
-<!-- CTA Section -->
-<section class="cta-section">
-    <div class="container">
-        <div class="cta-content">
-            <h2>Ready to Start Your Project?</h2>
-            <p>Let's work together to bring your ideas to life with innovative solutions.</p>
-            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-large">Get In Touch</a>
-        </div>
-    </div>
-</section>
-{% endblock %}
+<!-- CTA

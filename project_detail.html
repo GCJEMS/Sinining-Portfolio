@@ -1,115 +1,198 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Expertise - James Andre Sinining</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
 
-{% block title %}{{ project.title }} - Portfolio{% endblock %}
+<!-- Navbar -->
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">James Andre Sinining</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
-{% block content %}
-<!-- Project Header -->
-<section class="project-header">
+<!-- Page Header -->
+<section class="page-header">
     <div class="container">
-        <div class="project-header-content">
-            <div class="project-meta">
-                <span class="project-category">{{ project.category|title }}</span>
-                <span class="project-date">Completed 2024</span>
+        <h1 class="page-title">SERVICES & EXPERTISE</h1>
+        <p class="page-subtitle">Comprehensive IT solutions tailored to your needs</p>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section">
+    <div class="container">
+        <div class="services-container">
+
+            <!-- Web Development Service -->
+            <div class="service-detail" id="web-development">
+                <div class="service-header">
+                    <div class="service-icon-large">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h2>Web Development</h2>
+                </div>
+                <div class="service-content">
+                    <p class="service-description">
+                        Building responsive, modern, and scalable web applications using the latest technologies.
+                    </p>
+                    
+                    <div class="service-features">
+                        <h3>What I Offer:</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Custom Web Applications</li>
+                            <li><i class="fas fa-check"></i> Responsive Design & Mobile Optimization</li>
+                            <li><i class="fas fa-check"></i> RESTful APIs & Backend Integration</li>
+                            <li><i class="fas fa-check"></i> Performance & Security Optimization</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-tech">
+                        <h3>Technologies:</h3>
+                        <div class="tech-tags">
+                            <span>HTML5 & CSS3</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Vue.js</span>
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>Flask</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h1 class="project-title">{{ project.title }}</h1>
-            <p class="project-subtitle">{{ project.description }}</p>
+
+            <!-- Technical Consulting Service -->
+            <div class="service-detail" id="technical-consulting">
+                <div class="service-header">
+                    <div class="service-icon-large">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h2>Technical Consulting</h2>
+                </div>
+                <div class="service-content">
+                    <p class="service-description">
+                        Providing expert advice and strategy to ensure technology solutions align with business goals.
+                    </p>
+
+                    <div class="service-features">
+                        <h3>What I Offer:</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Technology Strategy & Planning</li>
+                            <li><i class="fas fa-check"></i> Architecture & System Design</li>
+                            <li><i class="fas fa-check"></i> Team Management & Code Reviews</li>
+                            <li><i class="fas fa-check"></i> Project Planning & Workflow Optimization</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-tech">
+                        <h3>Expertise Areas:</h3>
+                        <div class="tech-tags">
+                            <span>Technology Strategy</span>
+                            <span>Architecture Design</span>
+                            <span>Team Management</span>
+                            <span>Project Planning</span>
+                            <span>Code Reviews</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cloud Computing Service -->
+            <div class="service-detail" id="cloud-computing">
+                <div class="service-header">
+                    <div class="service-icon-large">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h2>Cloud Computing</h2>
+                </div>
+                <div class="service-content">
+                    <p class="service-description">
+                        Leveraging cloud platforms and tools to build scalable, secure, and highly available solutions.
+                    </p>
+
+                    <div class="service-features">
+                        <h3>What I Offer:</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Cloud Infrastructure Design & Deployment</li>
+                            <li><i class="fas fa-check"></i> Containerization & Orchestration</li>
+                            <li><i class="fas fa-check"></i> CI/CD Pipelines & Automation</li>
+                            <li><i class="fas fa-check"></i> Monitoring & Performance Optimization</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-tech">
+                        <h3>Cloud Platforms & Tools:</h3>
+                        <div class="tech-tags">
+                            <span>AWS</span>
+                            <span>Azure</span>
+                            <span>Google Cloud</span>
+                            <span>Docker</span>
+                            <span>Kubernetes</span>
+                            <span>Terraform</span>
+                            <span>CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
 
-<!-- Project Details -->
-<section class="project-details">
+<!-- Process Section -->
+<section class="process-section">
     <div class="container">
-        <div class="project-layout">
-            <div class="project-main">
-                <div class="project-image-large">
-                    <img src="{{ url_for('static', filename='images/' + project.image) }}" alt="{{ project.title }}">
-                </div>
-                
-                <div class="project-features">
-                    <h2>Key Features</h2>
-                    <div class="features-grid">
-                        {% for feature in project.features %}
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>{{ feature }}</span>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-                
-                <div class="project-description-full">
-                    <h2>Project Overview</h2>
-                    <p>
-                        This project was developed to address specific business needs using modern technologies 
-                        and best practices. The solution includes a comprehensive set of features designed to 
-                        provide maximum value to end-users while maintaining scalability and performance.
-                    </p>
-                    <p>
-                        The implementation followed agile methodology with regular iterations and client feedback 
-                        sessions to ensure the final product perfectly matched the requirements and expectations.
-                    </p>
-                </div>
+        <h2 class="section-title">My Working Process</h2>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Discovery & Planning</h3>
+                <p>Understand requirements and create detailed project plan</p>
             </div>
-            
-            <div class="project-sidebar">
-                <div class="project-tech-stack">
-                    <h3>Technology Stack</h3>
-                    <div class="tech-stack-list">
-                        {% for tech in project.technologies %}
-                        <div class="tech-item">
-                            <i class="fas fa-code"></i>
-                            <span>{{ tech }}</span>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-                
-                <div class="project-links">
-                    <h3>Project Links</h3>
-                    <a href="#" class="btn btn-primary btn-block">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                    <a href="#" class="btn btn-secondary btn-block">
-                        <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
-                </div>
-                
-                <div class="project-info">
-                    <h3>Project Details</h3>
-                    <div class="info-item">
-                        <strong>Category:</strong>
-                        <span>{{ project.category|title }}</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Duration:</strong>
-                        <span>3-6 months</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Team Size:</strong>
-                        <span>3-5 members</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Client:</strong>
-                        <span>Confidential</span>
-                    </div>
-                </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Design & Development</h3>
+                <p>Create solutions using modern technologies and best practices</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Testing & Deployment</h3>
+                <p>Rigorous testing followed by smooth deployment</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Support & Maintenance</h3>
+                <p>Ongoing support and regular updates</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Navigation -->
-<div class="project-navigation">
+<!-- CTA Section -->
+<section class="cta-section">
     <div class="container">
-        <div class="nav-links">
-            <a href="{{ url_for('portfolio') }}" class="nav-link">
-                <i class="fas fa-arrow-left"></i> Back to Portfolio
-            </a>
-            <a href="{{ url_for('contact') }}" class="nav-link">
-                Start a Similar Project <i class="fas fa-arrow-right"></i>
-            </a>
+        <div class="cta-content">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Let's work together to bring your ideas to life with innovative solutions.</p>
+            <a href="contact.html" class="btn btn-primary btn-large">Get In Touch</a>
         </div>
     </div>
-</div>
-{% endblock %}
+</section>
+
+</body>
+</html>

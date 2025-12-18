@@ -1,8 +1,44 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% block title %}About Me - IT Portfolio{% endblock %}
+    <title>About Me - James Andre Sinining</title>
 
-{% block content %}
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-brand">
+            <a href="index.html">JAS</a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="active">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="portfolio.html">PORTFOLIO</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<main>
+
 <!-- About Hero -->
 <section class="page-header">
     <div class="container">
@@ -149,10 +185,25 @@
         <div class="cta-content">
             <h2>Let's Work Together</h2>
             <p>Have a project in mind? Let's collaborate to bring your ideas to life.</p>
-            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-large">
+            <a href="contact.html" class="btn btn-primary btn-large">
                 <i class="fas fa-paper-plane"></i> Get In Touch
             </a>
         </div>
     </div>
 </section>
-{% endblock %}
+
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 James Andre Sinining. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/theme.js"></script>
+
+</body>
+</html>

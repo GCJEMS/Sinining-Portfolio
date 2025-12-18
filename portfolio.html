@@ -1,8 +1,30 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - James Andre Sinining</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
 
-{% block title %}Portfolio - IT Portfolio{% endblock %}
+<!-- Navbar -->
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">James Andre Sinining</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
-{% block content %}
 <!-- Page Header -->
 <section class="page-header">
     <div class="container">
@@ -70,10 +92,12 @@
         <div class="cta-content">
             <h2>Have a Project in Mind?</h2>
             <p>Let's collaborate to bring your ideas to life with innovative solutions</p>
-            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-large">
+            <a href="contact.html" class="btn btn-primary btn-large">
                 <i class="fas fa-paper-plane"></i> Start a Project
             </a>
         </div>
     </div>
 </section>
-{% endblock %}
+
+</body>
+</html>

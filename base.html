@@ -4,355 +4,361 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
-    <title>{% block title %}James Andre Sinining - IT Portfolio{% endblock %}</title>
+
+    <title>James Andre Sinining - IT Portfolio</title>
+
+    <!-- Favicon (online or root favicon.ico) -->
+    <link rel="icon" href="https://your-site.netlify.app/favicon.ico">
+
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <a href="{{ url_for('home') }}">JAS</a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="{{ url_for('home') }}">HOME</a></li>
-                <li><a href="{{ url_for('about') }}">ABOUT</a></li>
-                <li><a href="{{ url_for('portfolio') }}">PORTFOLIO</a></li>
-                <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <div class="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-brand">
+            <a href="index.html">JAS</a>
+        </div>
+
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="portfolio.html">PORTFOLIO</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- Flash Messages -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            <div class="flash-messages">
-                {% for category, message in messages %}
-                    <div class="flash-message {{ category }}">{{ message }}</div>
-                {% endfor %}
+<!-- Main Content -->
+<main>
+    <!-- PAGE-SPECIFIC CONTENT GOES HERE -->
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>James Andre Sinining</h3>
+                <p>UI/UX Designer & Full-Stack Developer</p>
             </div>
-        {% endif %}
-    {% endwith %}
 
-    <!-- Main Content -->
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>James Andre Sinining</h3>
-                    <p>UI/UX Designer & Full-Stack Developer</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Links</h4>
-                    <a href="{{ url_for('home') }}">Home</a>
-                    <a href="{{ url_for('about') }}">About</a>
-                    <a href="{{ url_for('portfolio') }}">Portfolio</a>
-                    <a href="{{ url_for('contact') }}">Contact</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:jamesandresinining@email.com">jamesandresinining@email.com</a></p>
-                </div>
+            <div class="footer-section">
+                <h4>Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contact</a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 James Andre Sinining. All rights reserved.</p>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:jamesandresinining@email.com">
+                        jamesandresinining@email.com
+                    </a>
+                </p>
             </div>
         </div>
-    </footer>
 
-    <!-- Flowise Chatbot -->
-    <script type="module">
-        import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-        Chatbot.init({
-            chatflowid: "3acefaa8-aa4d-4bf0-b097-27e90d62deb8",
-            apiHost: "https://flowise-production-c10f.up.railway.app",
-            chatflowConfig: {
-                /* Chatflow Config */
+        <div class="footer-bottom">
+            <p>&copy; 2025 James Andre Sinining. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Flowise Chatbot -->
+<script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.init({
+        chatflowid: "3acefaa8-aa4d-4bf0-b097-27e90d62deb8",
+        apiHost: "https://flowise-production-c10f.up.railway.app",
+        chatflowConfig: {
+            /* Chatflow Config */
+        },
+        observersConfig: {
+            /* Observers Config */
+        },
+        theme: {
+            button: {
+                backgroundColor: '#667eea',
+                right: 20,
+                bottom: 20,
+                size: 48,
+                dragAndDrop: true,
+                iconColor: 'white',
+                customIconSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
+                autoWindowOpen: {
+                    autoOpen: true,
+                    openDelay: 2,
+                    autoOpenOnMobile: false
+                }
             },
-            observersConfig: {
-                /* Observers Config */
+            tooltip: {
+                showTooltip: true,
+                tooltipMessage: 'Hi There 👋!',
+                tooltipBackgroundColor: '#2d3748',
+                tooltipTextColor: 'white',
+                tooltipFontSize: 16
             },
-            theme: {
-                button: {
-                    backgroundColor: '#667eea',
-                    right: 20,
-                    bottom: 20,
-                    size: 48,
-                    dragAndDrop: true,
-                    iconColor: 'white',
-                    customIconSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
-                    autoWindowOpen: {
-                        autoOpen: true,
-                        openDelay: 2,
-                        autoOpenOnMobile: false
+            disclaimer: {
+                title: 'Disclaimer',
+                message: "By using this chatbot, you agree to the <a target=\"_blank\" href=\"https://flowiseai.com/terms\">Terms & Condition</a>",
+                textColor: '#303235',
+                buttonColor: '#667eea',
+                buttonText: 'Start Chatting',
+                buttonTextColor: 'white',
+                blurredBackgroundColor: 'rgba(0, 0, 0, 0.4)',
+                backgroundColor: 'white'
+            },
+            customCSS: `
+                /* Container & Border Radius */
+                .flowise-chatbot-iframe {
+                    border-radius: 16px !important;
+                    box-shadow: 0 10px 50px rgba(102, 126, 234, 0.2) !important;
+                    overflow: hidden !important;
+                }
+                
+                /* Title Bar Enhancement */
+                .flowise-chatbot-title-bar {
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+                    padding: 16px !important;
+                    border-bottom: none !important;
+                    display: flex !important;
+                    justify-content: space-between !important;
+                    align-items: center !important;
+                }
+                
+                .flowise-chatbot-title {
+                    color: white !important;
+                    font-weight: 600 !important;
+                    font-size: 16px !important;
+                    margin: 0 !important;
+                }
+                
+                /* Close Button - Exit */
+                .flowise-chatbot-close-button {
+                    background: rgba(255, 255, 255, 0.2) !important;
+                    color: white !important;
+                    border: none !important;
+                    border-radius: 6px !important;
+                    padding: 8px 12px !important;
+                    cursor: pointer !important;
+                    transition: all 0.3s ease !important;
+                    font-size: 18px !important;
+                    font-weight: bold !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                }
+                
+                .flowise-chatbot-close-button:hover {
+                    background: rgba(255, 255, 255, 0.3) !important;
+                    transform: scale(1.1) !important;
+                }
+                
+                /* Scrollbar Styling */
+                ::-webkit-scrollbar {
+                    width: 10px !important;
+                }
+                
+                ::-webkit-scrollbar-track {
+                    background: #f5f5f5 !important;
+                    border-radius: 10px !important;
+                }
+                
+                ::-webkit-scrollbar-thumb {
+                    background: linear-gradient(to bottom, #667eea, #764ba2) !important;
+                    border-radius: 10px !important;
+                    border: 2px solid #f5f5f5 !important;
+                }
+                
+                ::-webkit-scrollbar-thumb:hover {
+                    background: linear-gradient(to bottom, #5568d3, #6a3fa0) !important;
+                }
+                
+                /* Message Bubbles */
+                .flowise-chatbot-message-bubble {
+                    border-radius: 12px !important;
+                    padding: 12px 16px !important;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+                    animation: slideIn 0.3s ease !important;
+                }
+                
+                @keyframes slideIn {
+                    from {
+                        opacity: 0;
+                        transform: translateY(10px);
                     }
-                },
-                tooltip: {
-                    showTooltip: true,
-                    tooltipMessage: 'Hi There 👋!',
-                    tooltipBackgroundColor: '#2d3748',
-                    tooltipTextColor: 'white',
-                    tooltipFontSize: 16
-                },
-                disclaimer: {
-                    title: 'Disclaimer',
-                    message: "By using this chatbot, you agree to the <a target=\"_blank\" href=\"https://flowiseai.com/terms\">Terms & Condition</a>",
-                    textColor: '#303235',
-                    buttonColor: '#667eea',
-                    buttonText: 'Start Chatting',
-                    buttonTextColor: 'white',
-                    blurredBackgroundColor: 'rgba(0, 0, 0, 0.4)',
-                    backgroundColor: 'white'
-                },
-                customCSS: `
-                    /* Container & Border Radius */
-                    .flowise-chatbot-iframe {
-                        border-radius: 16px !important;
-                        box-shadow: 0 10px 50px rgba(102, 126, 234, 0.2) !important;
-                        overflow: hidden !important;
-                    }
-                    
-                    /* Title Bar Enhancement */
-                    .flowise-chatbot-title-bar {
-                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-                        padding: 16px !important;
-                        border-bottom: none !important;
-                        display: flex !important;
-                        justify-content: space-between !important;
-                        align-items: center !important;
-                    }
-                    
-                    .flowise-chatbot-title {
-                        color: white !important;
-                        font-weight: 600 !important;
-                        font-size: 16px !important;
-                        margin: 0 !important;
-                    }
-                    
-                    /* Close Button - Exit */
-                    .flowise-chatbot-close-button {
-                        background: rgba(255, 255, 255, 0.2) !important;
-                        color: white !important;
-                        border: none !important;
-                        border-radius: 6px !important;
-                        padding: 8px 12px !important;
-                        cursor: pointer !important;
-                        transition: all 0.3s ease !important;
-                        font-size: 18px !important;
-                        font-weight: bold !important;
-                        display: flex !important;
-                        align-items: center !important;
-                        justify-content: center !important;
-                    }
-                    
-                    .flowise-chatbot-close-button:hover {
-                        background: rgba(255, 255, 255, 0.3) !important;
-                        transform: scale(1.1) !important;
-                    }
-                    
-                    /* Scrollbar Styling */
-                    ::-webkit-scrollbar {
-                        width: 10px !important;
-                    }
-                    
-                    ::-webkit-scrollbar-track {
-                        background: #f5f5f5 !important;
-                        border-radius: 10px !important;
-                    }
-                    
-                    ::-webkit-scrollbar-thumb {
-                        background: linear-gradient(to bottom, #667eea, #764ba2) !important;
-                        border-radius: 10px !important;
-                        border: 2px solid #f5f5f5 !important;
-                    }
-                    
-                    ::-webkit-scrollbar-thumb:hover {
-                        background: linear-gradient(to bottom, #5568d3, #6a3fa0) !important;
-                    }
-                    
-                    /* Message Bubbles */
-                    .flowise-chatbot-message-bubble {
-                        border-radius: 12px !important;
-                        padding: 12px 16px !important;
-                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
-                        animation: slideIn 0.3s ease !important;
-                    }
-                    
-                    @keyframes slideIn {
-                        from {
-                            opacity: 0;
-                            transform: translateY(10px);
-                        }
-                        to {
-                            opacity: 1;
-                            transform: translateY(0);
-                        }
-                    }
-                    
-                    /* Bot Message Avatar */
-                    .flowise-chatbot-bot-avatar {
-                        width: 32px !important;
-                        height: 32px !important;
-                        border-radius: 50% !important;
-                        background: linear-gradient(135deg, #667eea, #764ba2) !important;
-                        display: flex !important;
-                        align-items: center !important;
-                        justify-content: center !important;
-                        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3) !important;
-                    }
-                    
-                    /* User Message Avatar */
-                    .flowise-chatbot-user-avatar {
-                        width: 32px !important;
-                        height: 32px !important;
-                        border-radius: 50% !important;
-                        background: #667eea !important;
-                        display: flex !important;
-                        align-items: center !important;
-                        justify-content: center !important;
-                        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3) !important;
-                    }
-                    
-                    /* Input Area */
-                    .flowise-chatbot-input-area {
-                        background: #f9f9f9 !important;
-                        border-top: 1px solid #e5e7eb !important;
-                        padding: 12px !important;
-                    }
-                    
-                    /* Text Input */
-                    .flowise-chatbot-text-input {
-                        background: white !important;
-                        border: 1px solid #e5e7eb !important;
-                        border-radius: 8px !important;
-                        padding: 10px 14px !important;
-                        font-size: 14px !important;
-                        transition: all 0.3s ease !important;
-                    }
-                    
-                    .flowise-chatbot-text-input:focus {
-                        border-color: #667eea !important;
-                        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
-                        outline: none !important;
-                    }
-                    
-                    /* Send Button */
-                    .flowise-chatbot-send-button {
-                        background: linear-gradient(135deg, #667eea, #764ba2) !important;
-                        border: none !important;
-                        border-radius: 8px !important;
-                        color: white !important;
-                        padding: 10px 16px !important;
-                        cursor: pointer !important;
-                        transition: all 0.3s ease !important;
-                        font-weight: 600 !important;
-                    }
-                    
-                    .flowise-chatbot-send-button:hover {
-                        transform: translateY(-2px) !important;
-                        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4) !important;
-                    }
-                    
-                    .flowise-chatbot-send-button:active {
-                        transform: translateY(0) !important;
-                    }
-                    
-                    /* Footer */
-                    .flowise-chatbot-footer {
-                        background: #f9f9f9 !important;
-                        border-top: 1px solid #e5e7eb !important;
-                        padding: 10px !important;
-                        font-size: 12px !important;
-                        color: #666 !important;
-                    }
-                    
-                    .flowise-chatbot-footer a {
-                        color: #667eea !important;
-                        text-decoration: none !important;
-                    }
-                    
-                    .flowise-chatbot-footer a:hover {
-                        text-decoration: underline !important;
-                    }
-                `,
-                chatWindow: {
-                    showTitle: true,
-                    showAgentMessages: true,
-                    title: 'Chat with me',
-                    titleAvatarSrc: 'https://cdn-icons-png.flaticon.com/512/3556/3556091.png',
-                    welcomeMessage: 'Hello! 👋 I\'m James\'s AI assistant. Ask me anything about my projects, services, and experience!',
-                    errorMessage: 'Oops! Something went wrong. Please try again.',
-                    backgroundColor: '#ffffff',
-                    height: 550,
-                    width: 380,
-                    fontSize: 16,
-                    starterPrompts: [
-                        "What services do you offer?",
-                        "Tell me about your projects",
-                        "What technologies do you use?",
-                        "How can I contact you?"
-                    ],
-                    starterPromptFontSize: 15,
-                    clearChatOnReload: false,
-                    sourceDocsTitle: 'Sources:',
-                    renderHTML: true,
-                    botMessage: {
-                        backgroundColor: '#f7f8ff',
-                        textColor: '#303235',
-                        showAvatar: true,
-                        avatarSrc: 'https://cdn-icons-png.flaticon.com/512/3556/3556091.png'
-                    },
-                    userMessage: {
-                        backgroundColor: '#667eea',
-                        textColor: '#ffffff',
-                        showAvatar: true,
-                        avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png'
-                    },
-                    textInput: {
-                        placeholder: 'Type your question',
-                        backgroundColor: '#ffffff',
-                        textColor: '#303235',
-                        sendButtonColor: '#667eea',
-                        autoFocus: true,
-                        sendMessageSound: false,
-                        receiveMessageSound: false
-                    },
-                    feedback: {
-                        color: '#303235'
-                    },
-                    dateTimeToggle: {
-                        date: true,
-                        time: true
-                    },
-                    footer: {
-                        textColor: '#303235',
-                        text: 'Powered by',
-                        company: 'Flowise',
-                        companyLink: 'https://flowiseai.com'
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
                     }
                 }
+                
+                /* Bot Message Avatar */
+                .flowise-chatbot-bot-avatar {
+                    width: 32px !important;
+                    height: 32px !important;
+                    border-radius: 50% !important;
+                    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3) !important;
+                }
+                
+                /* User Message Avatar */
+                .flowise-chatbot-user-avatar {
+                    width: 32px !important;
+                    height: 32px !important;
+                    border-radius: 50% !important;
+                    background: #667eea !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3) !important;
+                }
+                
+                /* Input Area */
+                .flowise-chatbot-input-area {
+                    background: #f9f9f9 !important;
+                    border-top: 1px solid #e5e7eb !important;
+                    padding: 12px !important;
+                }
+                
+                /* Text Input */
+                .flowise-chatbot-text-input {
+                    background: white !important;
+                    border: 1px solid #e5e7eb !important;
+                    border-radius: 8px !important;
+                    padding: 10px 14px !important;
+                    font-size: 14px !important;
+                    transition: all 0.3s ease !important;
+                }
+                
+                .flowise-chatbot-text-input:focus {
+                    border-color: #667eea !important;
+                    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+                    outline: none !important;
+                }
+                
+                /* Send Button */
+                .flowise-chatbot-send-button {
+                    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+                    border: none !important;
+                    border-radius: 8px !important;
+                    color: white !important;
+                    padding: 10px 16px !important;
+                    cursor: pointer !important;
+                    transition: all 0.3s ease !important;
+                    font-weight: 600 !important;
+                }
+                
+                .flowise-chatbot-send-button:hover {
+                    transform: translateY(-2px) !important;
+                    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4) !important;
+                }
+                
+                .flowise-chatbot-send-button:active {
+                    transform: translateY(0) !important;
+                }
+                
+                /* Footer */
+                .flowise-chatbot-footer {
+                    background: #f9f9f9 !important;
+                    border-top: 1px solid #e5e7eb !important;
+                    padding: 10px !important;
+                    font-size: 12px !important;
+                    color: #666 !important;
+                }
+                
+                .flowise-chatbot-footer a {
+                    color: #667eea !important;
+                    text-decoration: none !important;
+                }
+                
+                .flowise-chatbot-footer a:hover {
+                    text-decoration: underline !important;
+                }
+            `,
+            chatWindow: {
+                showTitle: true,
+                showAgentMessages: true,
+                title: 'Chat with me',
+                titleAvatarSrc: 'https://cdn-icons-png.flaticon.com/512/3556/3556091.png',
+                welcomeMessage: 'Hello! 👋 I\'m James\'s AI assistant. Ask me anything about my projects, services, and experience!',
+                errorMessage: 'Oops! Something went wrong. Please try again.',
+                backgroundColor: '#ffffff',
+                height: 550,
+                width: 380,
+                fontSize: 16,
+                starterPrompts: [
+                    "What services do you offer?",
+                    "Tell me about your projects",
+                    "What technologies do you use?",
+                    "How can I contact you?"
+                ],
+                starterPromptFontSize: 15,
+                clearChatOnReload: false,
+                sourceDocsTitle: 'Sources:',
+                renderHTML: true,
+                botMessage: {
+                    backgroundColor: '#f7f8ff',
+                    textColor: '#303235',
+                    showAvatar: true,
+                    avatarSrc: 'https://cdn-icons-png.flaticon.com/512/3556/3556091.png'
+                },
+                userMessage: {
+                    backgroundColor: '#667eea',
+                    textColor: '#ffffff',
+                    showAvatar: true,
+                    avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png'
+                },
+                textInput: {
+                    placeholder: 'Type your question',
+                    backgroundColor: '#ffffff',
+                    textColor: '#303235',
+                    sendButtonColor: '#667eea',
+                    autoFocus: true,
+                    sendMessageSound: false,
+                    receiveMessageSound: false
+                },
+                feedback: {
+                    color: '#303235'
+                },
+                dateTimeToggle: {
+                    date: true,
+                    time: true
+                },
+                footer: {
+                    textColor: '#303235',
+                    text: 'Powered by',
+                    company: 'Flowise',
+                    companyLink: 'https://flowiseai.com'
+                }
             }
-        })
-    </script>
+        }
+    })
+</script>
 
-    <script src="js/script.js"></script>
-    <script src="js/theme.js"></script>
+<script src="js/script.js"></script>
+<script src="js/theme.js"></script>
+
 </body>
 </html>
